@@ -630,6 +630,24 @@ section {
   bottom: 0;
 }
 
+.portfolio .portfolio-caption {
+  padding: 14px 4px 0;
+}
+
+.portfolio .portfolio-caption h4 {
+  color: #173b6c;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.portfolio .portfolio-caption p {
+  color: #5e6a75;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/

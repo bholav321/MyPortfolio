@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }   
 
     // Email configuration
-    $to = 'bholavishwkarma933@gmail.com'; // Replace with your email address
+    $to = 'bholav321@gmail.com';
     $headers = "From: $name <$email>\r\n"; // Email sender information
 
     // Send email
