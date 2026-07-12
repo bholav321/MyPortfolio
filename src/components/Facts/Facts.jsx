@@ -3,9 +3,9 @@ import './Facts.css';
 
 /** Custom hook: animates a number from 0 → end when the element enters the viewport */
 const useCountUp = (end, duration = 2000) => {
-  const [count, setCount]     = useState(0);
+  const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
-  const ref                   = useRef(null);
+  const ref = useRef(null);
 
   // Trigger animation when the element is visible
   useEffect(() => {
@@ -80,7 +80,7 @@ const STATS = [
   {
     icon: 'bi-plug',
     color: '#10b981',
-    end: 15,
+    end: 1500,
     suffix: '+',
     label: 'REST APIs Integrated with validation and error handling',
     delay: 200,

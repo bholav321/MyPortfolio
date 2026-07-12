@@ -211,6 +211,8 @@ section.section-alt {
   font-size: var(--fs-sm);
   cursor: pointer;
   transition: var(--transition-normal);
+  text-decoration: none;     /* for <a> tags */
+  line-height: 1;
 }
 
 .btn-outline-custom:hover {
@@ -218,6 +220,7 @@ section.section-alt {
   color: #fff;
   transform: translateY(-2px);
   box-shadow: var(--shadow-accent);
+  text-decoration: none;
 }
 
 /* ── Info List (About/Resume) ── */

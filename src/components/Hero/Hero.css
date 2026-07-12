@@ -102,10 +102,28 @@
 /* ── CTA buttons ── */
 .hero-cta {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  margin-top: 8px;
+  margin-top: 12px;
+}
+
+/* Normalize both <button> and <a> inside .hero-cta to exact same size */
+.hero-cta .btn-primary-custom,
+.hero-cta .btn-outline-custom {
+  min-width: 148px;
+  height: 48px;
+  padding: 0 26px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  line-height: 1;
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
 /* ── Scroll indicator ── */
@@ -165,15 +183,16 @@
   animation-delay: 0s;
 }
 
-.hero-badge-2 {
-  bottom: 28%;
-  left: 6%;
-  animation-delay: 2s;
-}
-
 @keyframes floatBadge {
   0%, 100% { transform: translateY(0px);  }
   50%       { transform: translateY(-8px); }
+}
+
+/* Exp badge sits in the CTA row — pointer-events off so it\'s not clickable */
+.hero-exp-badge {
+  cursor: default !important;
+  pointer-events: none;
+  opacity: 0.85;
 }
 
 @media (max-width: 991px) {

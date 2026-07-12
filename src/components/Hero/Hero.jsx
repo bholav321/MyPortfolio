@@ -30,14 +30,10 @@ const Hero = () => {
       {/* Background dot grid */}
       <div className="hero-grid" aria-hidden="true" />
 
-      {/* Floating decorative badges */}
+      {/* Floating decorative badge — top right only */}
       <div className="hero-badge hero-badge-1" aria-hidden="true">
         <i className="bi bi-lightning-charge-fill"></i>
         React.js Specialist
-      </div>
-      <div className="hero-badge hero-badge-2" aria-hidden="true">
-        <i className="bi bi-code-slash"></i>
-        2+ Years Experience
       </div>
 
       {/* Main hero content */}
@@ -52,6 +48,7 @@ const Hero = () => {
           </span>
         </p>
 
+        {/* CTA row — all 4 buttons same style, same alignment */}
         <div className="hero-cta">
           <button
             className="btn-primary-custom"
@@ -60,6 +57,16 @@ const Hero = () => {
             <i className="bi bi-envelope-fill"></i>
             Get In Touch
           </button>
+
+          <a
+            href="/Bhola_Vishwkarma_Resume.pdf"
+            download="Bhola_Vishwkarma_Resume.pdf"
+            className="btn-outline-custom"
+          >
+            <i className="bi bi-download"></i>
+            Download CV
+          </a>
+
           <button
             className="btn-outline-custom"
             onClick={() => scrollToSection('portfolio')}
@@ -67,6 +74,11 @@ const Hero = () => {
             <i className="bi bi-grid-3x3-gap"></i>
             View Work
           </button>
+
+          <span className="btn-outline-custom hero-exp-badge">
+            <i className="bi bi-code-slash"></i>
+            2+ Years Experience
+          </span>
         </div>
       </div>
 
