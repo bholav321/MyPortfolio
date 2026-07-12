@@ -1,0 +1,88 @@
+/* ============================================
+   CSS DESIGN SYSTEM — VARIABLES
+   Bhola Vishwkarma Portfolio
+   ============================================ */
+
+:root {
+  /* ── Colors ── */
+  --color-bg: #0a0e1a;
+  --color-sidebar-bg: #0d1225;
+  --color-surface: #1a2035;
+  --color-surface-2: #141c30;
+  --color-surface-3: #0f1629;
+  --color-border: rgba(79, 142, 247, 0.12);
+  --color-border-hover: rgba(79, 142, 247, 0.3);
+
+  --color-accent: #4f8ef7;
+  --color-accent-hover: #6ba3f8;
+  --color-accent-secondary: #7c3aed;
+  --color-accent-glow: rgba(79, 142, 247, 0.25);
+
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-text-dim: #64748b;
+  --color-text-on-accent: #ffffff;
+
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+
+  --color-section-alt: #0d1122;
+
+  /* ── Gradients ── */
+  --gradient-primary: linear-gradient(135deg, #4f8ef7 0%, #7c3aed 100%);
+  --gradient-hero: linear-gradient(135deg, #060913 0%, #12103a 40%, #071228 100%);
+  --gradient-card: linear-gradient(145deg, #1a2035 0%, #141c30 100%);
+  --gradient-sidebar: linear-gradient(180deg, #0d1225 0%, #080d1e 100%);
+  --gradient-text: linear-gradient(135deg, #4f8ef7, #a78bfa);
+  --gradient-border: linear-gradient(135deg, #4f8ef7, #7c3aed);
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 16px 60px rgba(0, 0, 0, 0.7);
+  --shadow-accent: 0 4px 24px rgba(79, 142, 247, 0.2);
+  --shadow-glow: 0 0 30px rgba(79, 142, 247, 0.25);
+  --shadow-card-hover: 0 12px 48px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(79, 142, 247, 0.15);
+
+  /* ── Transitions ── */
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+  --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Border Radius ── */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 50px;
+  --radius-circle: 50%;
+
+  /* ── Spacing ── */
+  --section-padding-y: 90px;
+  --sidebar-width: 300px;
+
+  /* ── Typography ── */
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Raleway', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 1.875rem;
+  --fs-4xl: 2.25rem;
+  --fs-5xl: 3rem;
+
+  /* ── Z-indices ── */
+  --z-sidebar: 997;
+  --z-overlay: 996;
+  --z-toggle: 998;
+  --z-tooltip: 999;
+  --z-modal: 1000;
+}

@@ -1,0 +1,135 @@
+/* ============================================
+   RESPONSIVE STYLES
+   Bhola Vishwkarma Portfolio
+   ============================================ */
+
+/* ── Extra Large (1200px+) ── */
+@media (min-width: 1200px) {
+  .mobile-nav-toggle {
+    display: none;
+  }
+  .mobile-overlay {
+    display: none !important;
+  }
+  #header {
+    transform: translateX(0) !important;
+  }
+}
+
+/* ── Large (992px – 1199px) ── */
+@media (max-width: 1199px) {
+  #main-content {
+    margin-left: 0;
+  }
+  #header {
+    transform: translateX(-100%);
+    width: 280px;
+    box-shadow: 4px 0 40px rgba(0, 0, 0, 0.6);
+  }
+  #header.mobile-open {
+    transform: translateX(0);
+  }
+  .mobile-nav-toggle {
+    display: flex !important;
+  }
+}
+
+/* ── Medium (768px – 991px) ── */
+@media (max-width: 991px) {
+  section {
+    padding: 70px 0;
+  }
+  .section-title {
+    padding-bottom: 40px;
+  }
+  .section-title h2 {
+    font-size: 2rem;
+  }
+  .hero-container h1 {
+    font-size: 2.8rem !important;
+  }
+  .hero-container p {
+    font-size: 1.1rem !important;
+  }
+  .resume-timeline::before {
+    left: 16px;
+  }
+  .timeline-item {
+    padding-left: 44px;
+  }
+  .timeline-dot {
+    left: 8px;
+  }
+}
+
+/* ── Small (576px – 767px) ── */
+@media (max-width: 767px) {
+  section {
+    padding: 60px 0;
+  }
+  .section-title h2 {
+    font-size: 1.75rem;
+  }
+  .hero-container h1 {
+    font-size: 2.2rem !important;
+  }
+  .hero-container p {
+    font-size: 1rem !important;
+  }
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .portfolio-filter-btns {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+  }
+  .skill-icons-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+/* ── Extra Small (below 576px) ── */
+@media (max-width: 575px) {
+  .section-title h2 {
+    font-size: 1.5rem;
+  }
+  .hero-container h1 {
+    font-size: 1.8rem !important;
+  }
+  .facts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .skill-icons-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .mobile-nav-toggle {
+    top: 14px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* ── Touch Device Hover Fix ── */
+@media (hover: none) {
+  .glass-card:hover {
+    transform: none;
+  }
+  .skill-icon-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

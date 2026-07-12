@@ -1,0 +1,313 @@
+/* ============================================
+   GLOBAL STYLES
+   Bhola Vishwkarma Portfolio
+   ============================================ */
+
+/* ── Reset & Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-sidebar-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-hover);
+}
+
+/* ── Main Layout ── */
+#main-content {
+  margin-left: var(--sidebar-width);
+  transition: margin-left 0.3s ease;
+}
+
+/* ── Section Styles ── */
+section {
+  padding: var(--section-padding-y) 0;
+  position: relative;
+}
+
+section.section-alt {
+  background-color: var(--color-section-alt);
+}
+
+/* ── Section Title ── */
+.section-title {
+  text-align: center;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-family: var(--font-primary);
+  font-size: var(--fs-4xl);
+  font-weight: 700;
+  color: var(--color-text);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-pill);
+}
+
+.section-title h2 span {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-title p {
+  color: var(--color-text-muted);
+  font-size: var(--fs-base);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ── Cards ── */
+.glass-card {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(79, 142, 247, 0.4), transparent);
+}
+
+.glass-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+/* ── Accent Badge ── */
+.accent-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  background: rgba(79, 142, 247, 0.12);
+  border: 1px solid rgba(79, 142, 247, 0.25);
+  border-radius: var(--radius-pill);
+  color: var(--color-accent);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── Gradient Text ── */
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Buttons ── */
+.btn-primary-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--gradient-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-accent);
+  letter-spacing: 0.3px;
+}
+
+.btn-primary-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(79, 142, 247, 0.4);
+  color: #fff;
+}
+
+.btn-outline-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 28px;
+  background: transparent;
+  color: var(--color-accent);
+  border: 1.5px solid var(--color-accent);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.btn-outline-custom:hover {
+  background: var(--color-accent);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-accent);
+}
+
+/* ── Info List (About/Resume) ── */
+.info-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.info-list li:last-child {
+  border-bottom: none;
+}
+
+.info-list li .bi-chevron-right {
+  color: var(--color-accent);
+  font-size: 12px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.info-list li strong {
+  color: var(--color-text);
+  font-weight: 600;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.info-list li span {
+  color: var(--color-text-muted);
+}
+
+.info-list li a {
+  color: var(--color-accent);
+}
+
+/* ── Back To Top ── */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  background: var(--gradient-primary);
+  color: #fff;
+  border-radius: var(--radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  z-index: var(--z-tooltip);
+  box-shadow: var(--shadow-accent);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: var(--transition-normal);
+  cursor: pointer;
+  border: none;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(79, 142, 247, 0.4);
+}
+
+/* ── Divider ── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  margin: 0;
+}
+
+/* ── AOS Overrides ── */
+[data-aos] {
+  pointer-events: none;
+}
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+/* ── Bootstrap Overrides ── */
+.container {
+  max-width: 1200px;
+}

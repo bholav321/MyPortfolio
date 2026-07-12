@@ -1,0 +1,28 @@
+{
+  "name": "bhola-vishwkarma-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite --port 3000 --open",
+    "dev": "vite --port 3000 --open",
+    "build": "vite build",
+    "preview": "vite preview --port 3000"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "browserslist": "^4.28.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.7.0",
+    "swiper": "^11.1.4",
+    "typed.js": "^2.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.11"
+  }
+}
