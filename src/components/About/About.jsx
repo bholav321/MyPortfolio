@@ -86,7 +86,7 @@ const About = () => {
                     <li>
                       <i className="bi bi-chevron-right"></i>
                       <strong>Degree:</strong>
-                      <span>MCA pursuing, BCA completed</span>
+                      <span>MCA, BCA </span>
                     </li>
                     <li>
                       <i className="bi bi-chevron-right"></i>
@@ -105,16 +105,21 @@ const About = () => {
                   </ul>
                 </div>
               </div>
-
-              <p className="about-impact mt-3">
-                I have delivered UI systems that helped save <strong>7,000+ man-hours</strong> and
-                reduce annual operational costs by approximately <strong>₹3.6M+</strong>. I work in
-                structured development cycles using Zoho Projects, contribute to code reviews, and
-                actively document reusable frontend patterns and best practices. This helps improve
-                onboarding speed, maintain consistency across projects, and ensure faster, more
-                reliable feature delivery.
-              </p>
             </div>
+          </div>
+        </div>
+
+        {/* ── Full-width impact paragraph below image + content ── */}
+        <div className="row mt-4">
+          <div className="col-12" data-aos="fade-up" data-aos-delay="100">
+            <p className="about-impact">
+              I have delivered UI systems that helped save <strong>7,000+ man-hours</strong> and
+              reduce annual operational costs by approximately <strong>₹3.6M+</strong>. I work in
+              structured development cycles using Zoho Projects, contribute to code reviews, and
+              actively document reusable frontend patterns and best practices. This helps improve
+              onboarding speed, maintain consistency across projects, and ensure faster, more
+              reliable feature delivery.
+            </p>
           </div>
         </div>
 
