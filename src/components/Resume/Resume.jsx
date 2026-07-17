@@ -129,7 +129,7 @@ const Resume = () => (
                     <li>Integrated 250+ REST APIs with loading states, validation, retry handling, and consistent error flows to improve reliability across enterprise workflows.</li>
                     <li>Used TypeScript interfaces and Redux Toolkit slices for predictable state management, type-safe API integration, and fewer runtime defects in complex screens.</li>
                     <li>Improved rendering and bundle performance with React.memo, lazy loading, and route-level code splitting.</li>
-                    <li>Worked in Agile sprint cycles using Jira/Zoho, contributed to code reviews, and documented reusable frontend patterns for onboarding.</li>
+                    <li>Worked in sprint cycles using Zoho Projects, contributed to code reviews, and documented reusable frontend patterns for onboarding.</li>
                   </ul>
                 </div>
               </div>

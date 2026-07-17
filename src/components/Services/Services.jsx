@@ -35,7 +35,7 @@ const SERVICES = [
     icon: 'bi-kanban',
     color: '#06b6d4',
     title: 'Agile Product Delivery',
-    desc: 'Work in sprint cycles with Jira/Zoho, code reviews, documentation, handoff support, and cross-functional collaboration.',
+    desc: 'Work in sprint cycles with Zoho Projects, code reviews, documentation, handoff support, and cross-functional collaboration.',
   },
 ];
 

@@ -33,9 +33,9 @@ const COMPETENCIES = [
   },
   {
     icon: 'bi-people',
-    title: 'Agile Delivery',
+    title: 'Sprint Delivery',
     subtitle: 'Code Review + Documentation',
-    desc: 'Agile/Scrum collaboration with sprint planning, Jira/Zoho issue tracking, code reviews, documentation, and cross-functional delivery.',
+    desc: 'Sprint-based collaboration with Zoho Projects issue tracking, code reviews, documentation, and cross-functional delivery.',
     img: '/assets/img/testimonials/testimonials-5.jpg',
   },
 ];

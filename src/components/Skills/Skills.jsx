@@ -3,7 +3,7 @@ import {
 } from 'react-icons/fa';
 import {
   SiJavascript, SiExpress, SiPostman, SiMysql, SiMongodb, SiTypescript,
-  SiRedux, SiReactrouter, SiTailwindcss, SiMui, SiGit, SiJira,
+  SiRedux, SiReactrouter, SiTailwindcss, SiMui, SiGit,
 } from 'react-icons/si';
 import './Skills.css';
 
@@ -31,14 +31,12 @@ const SKILL_TAGS = [
   { name: 'Tailwind CSS', Icon: SiTailwindcss,  color: '#06b6d4' },
   { name: 'Material UI',  Icon: SiMui,          color: '#0081cb' },
   { name: 'Git',          Icon: SiGit,          color: '#f05032' },
-  { name: 'Jira',         Icon: SiJira,         color: '#0052cc' },
   { name: 'Context API',  Icon: FaReact,        color: '#61dafb' },
   { name: 'REST APIs',    Icon: null,            color: '#10b981' },
   { name: 'JWT Auth',     Icon: null,            color: '#f59e0b' },
   { name: 'Google OAuth', Icon: null,            color: '#ea4335' },
   { name: 'GitLab',       Icon: SiGit,          color: '#fc6d26' },
   { name: 'Zoho Projects',Icon: null,            color: '#4f8ef7' },
-  { name: 'Agile / Scrum',Icon: null,            color: '#7c3aed' },
   { name: 'Code Reviews', Icon: null,            color: '#94a3b8' },
 ];
 
@@ -51,9 +49,9 @@ const Skills = () => (
         <p>
           Core stack: React.js, TypeScript, JavaScript ES6+, Redux Toolkit, Context API, React
           Router, REST APIs, JWT authentication, Node.js, Express.js, MongoDB, Tailwind CSS,
-          Material UI, Bootstrap, Git, GitHub, GitLab, Postman, Jira, and Zoho. I apply these
+          Material UI, Bootstrap, Git, GitHub, GitLab, Postman, and Zoho Projects. I apply these
           across component-driven architecture, responsive design, cross-browser delivery,
-          performance optimization, Agile/Scrum workflows, and code reviews.
+          performance optimization, sprint-based workflows, and code reviews.
         </p>
       </div>
 
