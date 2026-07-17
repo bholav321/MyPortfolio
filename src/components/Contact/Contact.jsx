@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const INITIAL_FORM = { name: '', email: '', subject: '', message: '' };
@@ -7,47 +6,80 @@ const INITIAL_FORM = { name: '', email: '', subject: '', message: '' };
 const Contact = () => {
   const [form, setForm]     = useState(INITIAL_FORM);
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
+  // Per-field validation error messages
+  const [errors, setErrors] = useState({});
 
-  const handleChange = (e) =>
+  // Returns an object of field-level error strings; empty object = valid
+  const validate = () => {
+    const errs = {};
+    if (!form.name.trim())    errs.name    = 'Name is required.';
+    if (!form.email.trim())   errs.email   = 'Email is required.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim()))
+                              errs.email   = 'Enter a valid email address.';
+    if (!form.subject.trim()) errs.subject = 'Subject is required.';
+    if (!form.message.trim()) errs.message = 'Message is required.';
+    return errs;
+  };
+
+  const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    // Clear this field's error as soon as the user starts correcting it
+    if (errors[e.target.name]) {
+      setErrors((prev) => ({ ...prev, [e.target.name]: '' }));
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // ── Per-field client-side validation — block submit if any errors ──
+    const errs = validate();
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs);
+      return; // Do NOT proceed to fetch
+    }
+    setErrors({});
+
     setStatus('loading');
 
-    // ── EmailJS send ──
-    // To enable: copy .env.example to .env and fill in your EmailJS credentials.
-    // See README.md for full setup instructions.
-    const serviceId  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    // ── Web3Forms access key from .env (never hardcoded) ──
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
-    if (!serviceId || !templateId || !publicKey) {
-      // EmailJS not configured — simulate success for demo
-      setTimeout(() => {
-        setStatus('success');
-        setForm(INITIAL_FORM);
-      }, 1200);
-      return;
-    }
+    // ── Build the payload ──
+    const payload = {
+      access_key: accessKey,
+      name:       form.name,
+      email:      form.email,
+      subject:    form.subject,
+      message:    form.message,
+      // Prevents redirect — we handle the response ourselves
+      redirect:   'false',
+    };
 
     try {
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name:    form.name,
-          from_email:   form.email,
-          subject:      form.subject,
-          message:      form.message,
-          to_name:      'Bhola Vishwkarma',
-        },
-        publicKey
-      );
-      setStatus('success');
-      setForm(INITIAL_FORM);
+      // ── Submit via fetch() so the user stays on the page ──
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body:    JSON.stringify(payload),
+      });
+
+      // ── Parse JSON regardless of HTTP status ──
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        // ── Success: clear the form and any stale errors ──
+        setStatus('success');
+        setForm(INITIAL_FORM);
+        setErrors({});
+      } else {
+        // ── API returned an error (e.g. invalid key, rate-limit) ──
+        console.error('Web3Forms API error:', data);
+        setStatus('error');
+      }
     } catch (err) {
-      console.error('EmailJS error:', err);
+      // ── Network failure (offline, DNS, timeout, etc.) ──
+      console.error('Network error:', err);
       setStatus('error');
     }
   };
@@ -130,62 +162,86 @@ const Contact = () => {
                 <div className="row g-3">
                   <div className="col-md-6">
                     <div className="form-group-custom">
-                      <label htmlFor="name">Your Name</label>
+                      <label htmlFor="name">Your Name <span className="required-mark">*</span></label>
                       <input
                         type="text"
                         id="name"
                         name="name"
-                        className="form-control-custom"
+                        className={`form-control-custom${errors.name ? ' invalid' : ''}`}
                         placeholder="John Doe"
                         value={form.name}
                         onChange={handleChange}
                         required
                       />
+                      {/* Inline error for Name */}
+                      {errors.name && (
+                        <span className="field-error">
+                          <i className="bi bi-exclamation-circle"></i> {errors.name}
+                        </span>
+                      )}
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="form-group-custom">
-                      <label htmlFor="email">Your Email</label>
+                      <label htmlFor="email">Your Email <span className="required-mark">*</span></label>
                       <input
                         type="email"
                         id="email"
                         name="email"
-                        className="form-control-custom"
+                        className={`form-control-custom${errors.email ? ' invalid' : ''}`}
                         placeholder="you@example.com"
                         value={form.email}
                         onChange={handleChange}
                         required
                       />
+                      {/* Inline error for Email */}
+                      {errors.email && (
+                        <span className="field-error">
+                          <i className="bi bi-exclamation-circle"></i> {errors.email}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
 
                 <div className="form-group-custom">
-                  <label htmlFor="subject">Subject</label>
+                  <label htmlFor="subject">Subject <span className="required-mark">*</span></label>
                   <input
                     type="text"
                     id="subject"
                     name="subject"
-                    className="form-control-custom"
+                    className={`form-control-custom${errors.subject ? ' invalid' : ''}`}
                     placeholder="Project Inquiry / Collaboration / Other"
                     value={form.subject}
                     onChange={handleChange}
                     required
                   />
+                  {/* Inline error for Subject */}
+                  {errors.subject && (
+                    <span className="field-error">
+                      <i className="bi bi-exclamation-circle"></i> {errors.subject}
+                    </span>
+                  )}
                 </div>
 
                 <div className="form-group-custom">
-                  <label htmlFor="message">Message</label>
+                  <label htmlFor="message">Message <span className="required-mark">*</span></label>
                   <textarea
                     id="message"
                     name="message"
-                    className="form-control-custom"
+                    className={`form-control-custom${errors.message ? ' invalid' : ''}`}
                     placeholder="Tell me about your project, requirements, or just say hello!"
                     rows={7}
                     value={form.message}
                     onChange={handleChange}
                     required
                   />
+                  {/* Inline error for Message */}
+                  {errors.message && (
+                    <span className="field-error">
+                      <i className="bi bi-exclamation-circle"></i> {errors.message}
+                    </span>
+                  )}
                 </div>
 
                 {/* Status messages */}

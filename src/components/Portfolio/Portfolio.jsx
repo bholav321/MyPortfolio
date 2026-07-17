@@ -2,10 +2,9 @@ import { useState } from 'react';
 import './Portfolio.css';
 
 const FILTERS = [
-  { key: '*',          label: 'All'        },
+  { key: '*', label: 'All' },
   { key: 'enterprise', label: 'Enterprise' },
-  { key: 'mern',       label: 'MERN'       },
-  { key: 'frontend',   label: 'Frontend'   },
+  { key: 'frontend', label: 'Frontend' },
 ];
 
 const PROJECTS = [
@@ -15,30 +14,40 @@ const PROJECTS = [
     desc: 'Comprehensive precision cost management platform for enterprise cost analysis, reporting, and decision-making.',
     img: '/assets/img/portfolio/CIR.webp',
     tags: ['enterprise', 'frontend'],
-    tech: ['React.js', 'TypeScript', 'Redux Toolkit'],
+    tech: ['React.js', '.NET', 'Redux Toolkit'],
     impact: '7,000+ man-hours saved',
     impactIcon: 'bi-lightning-charge',
   },
   {
-    id: 2,
-    title: 'Utsav Uphaar',
-    desc: 'MERN e-commerce app with JWT authentication, Google OAuth, payment gateway, cart, and order tracking.',
-    img: '/assets/img/portfolio/web1.png',
-    tags: ['mern'],
-    tech: ['React.js', 'Node.js', 'MongoDB'],
-    impact: 'Full-stack MERN project',
-    impactIcon: 'bi-cart-check',
-  },
-  {
-    id: 3,
-    title: 'Internal HR Portal',
-    desc: 'React.js, TypeScript, Redux Toolkit, REST APIs, Material UI, role-based access, and dashboards.',
-    img: '/assets/img/portfolio/portfolio-3.jpg',
+    id: 4,
+    title: 'Cost It Right RFQ',
+    desc: 'Built a vendor portal that enables suppliers to receive RFQs, submit quotations, and streamline the procurement process.',
+    img: '/assets/img/portfolio/CIR.webp',
     tags: ['enterprise', 'frontend'],
-    tech: ['React.js', 'TypeScript', 'Material UI'],
-    impact: '30% faster UI delivery',
-    impactIcon: 'bi-graph-up-arrow',
+    tech: ['React.js', '.NET', 'Redux Toolkit'],
+    impact: 'Faster vendor quotation cycle',
+    impactIcon: 'bi-file-earmark-text',
   },
+  // {
+  //   id: 2,
+  //   title: 'Utsav Uphaar',
+  //   desc: 'MERN e-commerce app with JWT authentication, Google OAuth, payment gateway, cart, and order tracking.',
+  //   img: '/assets/img/portfolio/web1.png',
+  //   tags: ['mern'],
+  //   tech: ['React.js', 'Node.js', 'MongoDB'],
+  //   impact: 'Full-stack MERN project',
+  //   impactIcon: 'bi-cart-check',
+  // },
+  // {
+  //   id: 3,
+  //   title: 'Internal HR Portal',
+  //   desc: 'React.js, TypeScript, Redux Toolkit, REST APIs, Material UI, role-based access, and dashboards.',
+  //   img: '/assets/img/portfolio/portfolio-3.jpg',
+  //   tags: ['enterprise', 'frontend'],
+  //   tech: ['React.js', 'TypeScript', 'Material UI'],
+  //   impact: '30% faster UI delivery',
+  //   impactIcon: 'bi-graph-up-arrow',
+  // },
 ];
 
 const Portfolio = () => {
@@ -55,9 +64,8 @@ const Portfolio = () => {
         <div className="section-title" data-aos="fade-up">
           <h2 id="portfolio-heading">Portfolio</h2>
           <p>
-            Selected work showing enterprise React.js delivery, full-stack MERN development,
-            TypeScript usage, Redux Toolkit state management, authentication, and measurable
-            business impact.
+            Selected enterprise work showcasing React.js frontend development, .NET backend
+            integration, Redux Toolkit state management, and measurable business impact.
           </p>
         </div>
 
